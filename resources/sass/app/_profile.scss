@@ -1,0 +1,51 @@
+#profile {
+    .simple-toggle {
+        margin-bottom: 30px;
+    }
+
+    .bookings {
+        .date, .time {
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .booking {
+            border-left: 3px solid var(--color-primary);
+            padding-left: 30px;
+            margin-bottom: 50px;
+        }
+
+        .room {
+            cursor: pointer;
+            display: flex;
+            flex-flow: column;
+            font-size: 0.9375rem;
+            padding: 10px 30px;
+            border: 2px solid var(--color-background-light);
+            border-radius: 12px;
+            text-decoration: none;
+            color: currentColor;
+
+            .header {
+                display: flex;
+            }
+
+            .rate {
+                flex-grow: 1;
+            }
+
+            .name {
+                color: var(--color-primary);
+                margin-right: 10px;
+            }
+
+            .info {
+                font-size: 0.75rem;
+            }
+        }
+
+        .warning {
+            color: var(--color-primary);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "~bootstrap/scss/functions";
+@import "../../../sass/mixins/responsive";
+
+.date-popup-content {
+    display: flex;
+    flex-flow: column;
+    height: 634px;
+    position: relative;
+    max-height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    align-items: center;
+
+    @include phone {
+        height: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .date-picker {
+        width: 300px;
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        @include phone {
+            margin-bottom: 0;
+        }
+    }
+
+    .dialog-text {
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .selected-date {
+        color: var(--color-primary);
+
+        .collision {
+            color: currentColor;
+        }
+    }
+}

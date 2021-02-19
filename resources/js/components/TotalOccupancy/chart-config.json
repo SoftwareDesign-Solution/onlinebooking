@@ -1,0 +1,58 @@
+{
+    "type": "line",
+    "data": {
+        "label": [],
+        "datasets": [
+            {
+                "data": [],
+                "borderColor": "#ED7B23",
+                "backgroundColor": "rgba(237,123,35, 0.25)",
+                "fill": "start",
+                "lineWidth": 3,
+                "lineTension": 0,
+                "pointRadius": 5,
+                "pointHoverRadius": 5
+            }
+        ]
+    },
+    "options": {
+        "responsive": false,
+        "legend": {
+            "display": false
+        },
+        "scales": {
+            "yAxes": [
+                {
+                    "display": true,
+                    "scaleLabel": {
+                        "display": false,
+                        "labelString": "Auslastung in %"
+                    },
+                    "gridLines": {
+                        "display": false
+                    },
+                    "ticks": {
+                        "display": false,
+                        "suggestedMin": 0,
+                        "suggestedMax": 100
+                    }
+                }
+            ],
+            "xAxes": [
+                {
+                    "gridLines": {
+                        "color": "#6d6e71",
+                        "lineWidth": 2,
+                        "drawOnChartArea": true,
+                        "zeroLineColor": "#6d6e71",
+                        "zeroLineWidth": 2
+                    },
+                    "ticks": {
+                        "fontColor": "#FCFCFC",
+                        "fontSize": 14
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.search-bar {
+    display: flex;
+    vertical-align: center;
+    margin-bottom: 85px;
+
+    input[type=search] {
+        border: 1px solid var(--color-medium-dark-gray);
+        border-radius: 12px;
+        width: 280px;
+        height: 40px;
+        display: flex;
+        vertical-align: center;
+        outline: none;
+
+        font-size: 0.875rem;
+        padding: 0 17px;
+
+        &::placeholder {
+            color: currentColor;
+        }
+
+        &:active, &:focus {
+            border-color: var(--color-medium-light-gray);
+        }
+
+        margin-right: 18px;
+    }
+
+    .search-icon {
+        background: none;
+        border: 0;
+        padding: 0;
+
+        svg {
+            fill: var(--color-background-light);
+        }
+    }
+}

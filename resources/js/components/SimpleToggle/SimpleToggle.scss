@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+.simple-toggle {
+    font-size: 0.75rem;
+    display: inline-grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    grid-column-gap: 23px;
+}
+
+.option {
+    cursor: pointer;
+
+    &.active {
+        color: var(--color-primary);
+    }
+}
+
+@include phone {
+    .simple-toggle {
+        width: 100%;
+        grid-auto-columns: 1fr;
+    }
+
+    .option {
+        border: 2px solid var(--color-medium-dark-gray);
+        border-radius: 6px;
+        height: 29px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 0.625rem;
+
+        &.active {
+            color: currentColor;
+            border-color: var(--color-medium-light-gray);
+        }
+    }
+}

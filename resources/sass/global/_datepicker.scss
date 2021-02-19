@@ -1,0 +1,49 @@
+.date-time-picker {
+    color: currentColor !important;
+}
+
+.datetimepicker {
+
+    .datepicker {
+        button {
+            padding: 1px 6px;
+        }
+    }
+
+    &.inline .datepicker {
+        background-color: transparent !important;
+    }
+
+    .datepicker .pickers-container {
+        background-color: transparent !important;
+    }
+
+    .datepicker-buttons-container {
+        background-color: transparent !important;
+    }
+
+    .custom-button {
+        background-color: transparent !important;
+        color: currentColor !important;
+
+        .custom-button-content {
+            color: currentColor !important;
+        }
+    }
+
+    .datepicker-container .datepicker-days .datepicker-day {
+        color: currentColor !important;
+
+        .datepicker-day-text {
+            color: currentColor !important;
+        }
+
+        &.disabled {
+            opacity: 0.5;
+        }
+    }
+
+    .datepicker-container .datepicker-days .datepicker-day .datepicker-today {
+        background: transparent !important;
+    }
+}

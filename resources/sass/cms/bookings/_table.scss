@@ -1,0 +1,89 @@
+#bookings {
+
+    h1 {
+        margin-bottom: 160px;
+    }
+
+    .bookings-table {
+        width: auto;
+    }
+
+    table {
+        .booked {
+            background: var(--color-background-light);
+            color: var(--color-background-dark);
+        }
+
+        th {
+            border-bottom: 1px solid var(--color-background-light);
+
+            &:first-child {
+                border-bottom: 0;
+            }
+        }
+
+        tr {
+            border: 0;
+
+            &:first-child {
+                border-left: 0;
+                border-right: 0;
+            }
+
+            &:last-child {
+                td {
+                    border-bottom: 1px solid var(--color-background-light);
+                }
+
+                td.slot-label {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        td {
+            border-right: 1px solid var(--color-medium-dark-gray);
+            border-bottom: 1px solid var(--color-medium-dark-gray);
+            width: 120px;
+            height: 40px;
+            padding: 0;
+
+            &:last-child {
+                border-right: 1px solid var(--color-background-light);
+            }
+
+            &.slot-label {
+                text-align: left;
+                border: 0;
+                border-right: 1px solid var(--color-background-light);
+                padding: 0;
+                width: auto;
+            }
+
+            &.vacation {
+                border-bottom: 1px solid var(--color-background-light);
+            }
+
+        }
+    }
+
+    .calendar-day-toggle {
+        display: flex;
+        vertical-align: middle;
+
+        svg {
+            fill: var(--color-background-light);
+        }
+
+        .date-label {
+            display: flex;
+            align-items: center;
+            margin: 0 16px;
+
+            svg {
+                margin-left: 8px;
+            }
+        }
+    }
+
+}

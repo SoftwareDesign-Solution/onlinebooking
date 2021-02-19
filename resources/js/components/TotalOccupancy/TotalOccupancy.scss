@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+
+    .left {
+        flex-grow: 1;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .title {
+        font-size: 1.3125rem;
+    }
+
+    .date {
+        font-size: 1.3125rem;
+        margin-bottom: 5px;
+    }
+
+    .percentages {
+        font-size: 0.75rem;
+
+        .value {
+            color: var(--color-primary);
+        }
+    }
+
+    margin-bottom: 50px;
+}
+
+.chart-container {
+    height: 264px;
+    margin-bottom: 100px;
+}

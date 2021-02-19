@@ -1,0 +1,65 @@
+@import "~bootstrap/scss/functions";
+@import "../../../sass/mixins/responsive";
+
+.half-width-image-section {
+    overflow-x: hidden;
+}
+
+.section-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include tablet {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+}
+
+.half-width-image {
+    vertical-align: middle;
+    border-style: none;
+    position: absolute;
+    height: 100%;
+    width: 50vw;
+    max-height: 100%;
+    background-position: center;
+    background-size: cover;
+
+    &.right {
+        left: 0;
+    }
+
+    &.left {
+        right: 0
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+@include tablet {
+    h1, h2, h3, h4, h5 {
+        &.desktop {
+            display: none;
+        }
+    }
+}
+
+.mobile-image {
+    display: none;
+    height: 312px;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    margin-bottom: 30px;
+
+    .headlines {
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include tablet {
+        display: block;
+    }
+}

@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+@include tablet {
+    .horizontal-slider {
+        width: 100%;
+        display: flex;
+    }
+
+    .row {
+        flex-flow: row;
+        overflow-x: auto;
+    }
+}

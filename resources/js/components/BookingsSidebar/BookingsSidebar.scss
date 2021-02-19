@@ -1,0 +1,119 @@
+input, textarea, select {
+    color: var(--color-background-dark);
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+textarea {
+    width: 100%;
+    height: auto;
+}
+
+.date-time-picker {
+    width: 310px;
+}
+
+hr {
+    position: relative;
+    border: 0;
+    margin-top: 50px;
+    padding-bottom: 1px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.visible {
+    hr {
+        &:before {
+            content: '';
+            display: block;
+            width: calc(100% + 66px + 58px);
+            position: absolute;
+            left: -66px;
+            border: none;
+            border-top: 2px solid var(--color-light-gray);
+        }
+    }
+}
+
+.booking-sidebar-content {
+    width: 534px;
+    padding-right: 58px;
+    padding-bottom: 30px;
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.selected-date-range {
+    font-size: 1.3125rem;
+    color: var(--color-primary);
+}
+
+button {
+    width: 100%;
+
+    &.disabled {
+        background: var(--color-background-dark);
+    }
+}
+
+.scroll-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-right: 30px;
+    margin-right: -30px;
+}
+
+.special-booking-type {
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-left: 22px;
+
+    &.active {
+        color: var(--color-primary);
+    }
+}
+
+.special-booking-type-buttons {
+    display: flex;
+}
+
+.special-booking-type-label {
+    font-size: 1.3125rem;
+    margin-bottom: 10px;
+}
+
+.special-booking-type-selector {
+    display: inline-flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.special-booking-header {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.selected-date-range {
+    flex-grow: 1;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+.repeat-booking {
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    input[type="number"] {
+        display: inline-block;
+        width: 50px;
+    }
+}

@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    font-size: 1.3125rem;
+    justify-content: center;
+
+    .title {
+        margin-right: 20px;
+    }
+
+    .range {
+        color: var(--color-primary);
+    }
+}

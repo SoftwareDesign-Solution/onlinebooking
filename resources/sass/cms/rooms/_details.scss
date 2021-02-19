@@ -1,0 +1,28 @@
+#room-details {
+
+    h2 {
+        margin-bottom: 120px;
+    }
+
+    .row {
+        margin-bottom: 1.5rem;
+
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+        }
+
+        .rate {
+            position: relative;
+
+            &:after {
+                content: '€';
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es5",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "skipDefaultLibCheck": true,
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "lib": ["es5", "es2015", "dom"],
+        "allowJs": true,
+        "rootDir": "./resources/js",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./resources/typings"
+        ]
+    },
+    "include": ["./resources/js/**/*"]
+}

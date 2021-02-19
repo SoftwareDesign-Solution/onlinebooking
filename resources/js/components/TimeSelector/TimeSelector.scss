@@ -1,0 +1,34 @@
+.time-selector {
+    display: inline-flex;
+    margin-right: 10px;
+    user-select: none;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.hour {
+    margin-right: 11px;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.button {
+    display: flex;
+    cursor: pointer;
+
+    width: 1rem;
+    height: 1rem;
+
+    svg {
+        width: 14px;
+        fill: currentColor;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+}

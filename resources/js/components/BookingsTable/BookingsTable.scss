@@ -1,0 +1,36 @@
+.booked {
+    cursor: pointer;
+}
+
+.open {
+    cursor: pointer;
+}
+
+.booking-popup.popup-content {
+    display: flex;
+    flex-flow: column;
+    align-items: normal;
+
+    background: var(--color-background-light);
+    color: var(--color-background-dark);
+    padding: 50px 30px 30px;
+    border-radius: 12px;
+
+    min-width: 550px;
+
+    h2 {
+        color: currentColor;
+    }
+
+    .date {
+        margin-bottom: 40px;
+    }
+
+    .info {
+        margin-bottom: 60px;
+    }
+
+    button {
+        background: var(--color-background-dark);
+    }
+}

@@ -1,0 +1,14 @@
+#home {
+    .subheader {
+        font-size: 1.3125rem;
+        margin-bottom: 58px;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+
+        @include phone {
+            margin-bottom: 22px;
+        }
+    }
+}

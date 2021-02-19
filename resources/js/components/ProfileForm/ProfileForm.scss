@@ -1,0 +1,76 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+input {
+    display: block;
+    width: 100%;
+}
+
+label {
+    margin-top: 25px;
+}
+
+.buttons {
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+
+    button, .button {
+        margin-right: 20px;
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+}
+
+.validation-error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+}
+
+.destructive {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-bottom: 498px;
+
+    @include phone {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+.confirm-toast {
+    padding: 30px 35px;
+    display: flex;
+    flex-flow: column;
+
+    &.open {
+        display: flex;
+    }
+
+    p {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 20px;
+
+        &.cancel {
+            background: var(--color-background-dark);
+            display: none;
+
+            @include phone {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+body {
+    min-height: 100vh;
+}
+
+#app {
+    display: grid;
+    grid-template-areas: "navigation content";
+    grid-auto-columns: 100px auto;
+    min-height: 100vh;
+
+}
+
+nav {
+    grid-area: navigation;
+}
+
+main {
+    grid-area: content;
+    padding-top: 50px;
+}
+
+#sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+
+    &:empty {
+        display: none;
+    }
+}
+
+#hidden {
+    display: none;
+}

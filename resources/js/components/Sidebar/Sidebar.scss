@@ -1,0 +1,34 @@
+.sidebar-container {
+    pointer-events: all;
+    display: flex;
+    background: var(--color-background-light);
+    color: var(--color-background-dark);
+    border-radius: 24px 0 0 24px;
+    height: 100%;
+    transform: translateX(calc(100% - 66px));
+    transition: 200ms ease;
+
+    &.visible {
+        transform: translateX(0);
+    }
+}
+
+.sidebar-toggle {
+    width: 66px;
+    display: flex;
+    justify-content: center;
+    padding: 45px 0;
+}
+
+.toggle-button {
+    svg {
+        fill: var(--color-background-dark);
+        width: 30px;
+        height: 30px;
+        transition: 200ms ease;
+    }
+
+    &.visible svg {
+        transform: rotate(180deg);
+    }
+}

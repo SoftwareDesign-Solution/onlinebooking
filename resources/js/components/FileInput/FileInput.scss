@@ -1,0 +1,23 @@
+.file-input {
+    display: flex;
+    align-items: baseline;
+}
+
+input[type=file] {
+    display: none;
+}
+
+button {
+    border-radius: 9px;
+    color: currentColor;
+    background: var(--color-medium-light-gray);
+    border: 2px solid var(--color-medium-dark-gray);
+    height: 31px;
+    padding: 0 23px;
+    font-size: 0.75rem;
+    margin-right: 18px;
+}
+
+.value {
+    font-size: 0.875rem;
+}

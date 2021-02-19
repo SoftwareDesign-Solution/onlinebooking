@@ -1,0 +1,40 @@
+:root {
+    font-size: 100%;
+}
+
+body, html, * {
+    font-feature-settings: "kern" off;
+    font-variant: none;
+    font-style: normal;
+    text-transform: none;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-family-urw-din);
+}
+
+a, a:hover {
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    font-weight: normal;
+}

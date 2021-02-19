@@ -1,0 +1,26 @@
+.button {
+    display: none;
+    width: 21px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.fallback {
+    display: block;
+}
+
+.popup-open {
+    .button {
+        display: flex;
+    }
+
+    .fallback {
+        display: none;
+    }
+}

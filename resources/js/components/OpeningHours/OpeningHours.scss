@@ -1,0 +1,35 @@
+.opening-hours {
+    .header {
+        .title {
+            font-size: 1.3125rem;
+            margin-bottom: 18px;
+        }
+
+        .opening-hours {
+            display: grid;
+            grid-column-gap: 17px;
+            grid-auto-flow: column;
+            grid-auto-columns: min-content;
+            font-size: 0.9375rem;
+            margin-bottom: 40px;
+            white-space: nowrap;
+        }
+    }
+
+    .update-hours {
+        .title {
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .hours {
+            margin-bottom: 20px;
+        }
+    }
+
+    button {
+        background: transparent;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+    }
+}

@@ -1,0 +1,19 @@
+#rooms {
+    h1 {
+        margin-bottom: 184px;
+    }
+
+    table {
+        .smoking[data-value="1"] {
+            color: var(--color-primary);
+        }
+
+        .active[data-value="1"] {
+            color: var(--color-success);
+        }
+
+        .active[data-value="0"] {
+            color: var(--color-primary);
+        }
+    }
+}

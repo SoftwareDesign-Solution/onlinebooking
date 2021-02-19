@@ -1,0 +1,83 @@
+#burger-menu {
+    display: none;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    @include tablet {
+        display: block;
+    }
+
+    .background {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: rgba(var(--rgb-background-dark), 0.58);
+        transition: 200ms ease;
+    }
+
+    .navigation {
+        display: flex;
+        flex-flow: column;
+        position: fixed;
+        width: 213px;
+        padding: 60px 30px 30px 20px;
+        left: 0;
+        margin: 0;
+        height: calc(100% - 50px);
+        top: 50px;
+        background: var(--color-background-dark);
+        transform: translateX(calc(-100% - 10px)); // add some additional pixels so that the drop shadow does not show
+        box-shadow: 0 3px 6px rgba(var(--rgb-primary), 0.42);
+        transition: 200ms ease;
+        transition-delay: 50ms;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        li {
+            margin: 0 0 30px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        button {
+            margin-top: 40px;
+            padding: 0;
+            width: 100%;
+        }
+    }
+
+    &.active {
+        pointer-events: all;
+
+        .background {
+            opacity: 1;
+        }
+
+        .icon {
+            &:before, &:after {
+                width: 32px;
+            }
+        }
+
+        .navigation {
+            transform: translateX(0);
+        }
+    }
+}

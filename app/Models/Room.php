@@ -1,0 +1,194 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
+
+/**
+ * @property Booking[] bookings
+ * @property RoomImage[] images
+ *
+ * @method static Builder select($columns = ['*'])
+ * @method static Builder selectSub($query, $as)
+ * @method static Builder selectRaw($expression, array $bindings = [])
+ * @method static Builder fromSub($query, $as)
+ * @method static Builder fromRaw($expression, $bindings = [])
+ * @method static Builder addSelect($column)
+ * @method static Builder distinct()
+ * @method static Builder from($table, $as = null)
+ * @method static Builder join($table, $first, $operator = null, $second = null, $type = 'inner', $where = false)
+ * @method static Builder joinWhere($table, $first, $operator, $second, $type = 'inner')
+ * @method static Builder joinSub($query, $as, $first, $operator = null, $second = null, $type = 'inner', $where = false)
+ * @method static Builder leftJoin($table, $first, $operator = null, $second = null)
+ * @method static Builder leftJoinWhere($table, $first, $operator, $second)
+ * @method static Builder leftJoinSub($query, $as, $first, $operator = null, $second = null)
+ * @method static Builder rightJoin($table, $first, $operator = null, $second = null)
+ * @method static Builder rightJoinWhere($table, $first, $operator, $second)
+ * @method static Builder rightJoinSub($query, $as, $first, $operator = null, $second = null)
+ * @method static Builder crossJoin($table, $first = null, $operator = null, $second = null)
+ * @method static Builder crossJoinSub($query, $as)
+ * @method static Builder mergeWheres($wheres, $bindings)
+ * @method static Builder where($column, $operator = null, $value = null, $boolean = 'and')
+ * @method static Builder prepareValueAndOperator($value, $operator, $useDefault = false)
+ * @method static Builder orWhere($column, $operator = null, $value = null)
+ * @method static Builder whereColumn($first, $operator = null, $second = null, $boolean = 'and')
+ * @method static Builder orWhereColumn($first, $operator = null, $second = null)
+ * @method static Builder whereRaw($sql, $bindings = [], $boolean = 'and')
+ * @method static Builder orWhereRaw($sql, $bindings = [])
+ * @method static Builder whereIn($column, $values, $boolean = 'and', $not = false)
+ * @method static Builder orWhereIn($column, $values)
+ * @method static Builder whereNotIn($column, $values, $boolean = 'and')
+ * @method static Builder orWhereNotIn($column, $values)
+ * @method static Builder whereIntegerInRaw($column, $values, $boolean = 'and', $not = false)
+ * @method static Builder orWhereIntegerInRaw($column, $values)
+ * @method static Builder whereIntegerNotInRaw($column, $values, $boolean = 'and')
+ * @method static Builder orWhereIntegerNotInRaw($column, $values)
+ * @method static Builder whereNull($columns, $boolean = 'and', $not = false)
+ * @method static Builder orWhereNull($column)
+ * @method static Builder whereNotNull($columns, $boolean = 'and')
+ * @method static Builder whereBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder whereBetweenColumns($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder orWhereBetween($column, array $values)
+ * @method static Builder orWhereBetweenColumns($column, array $values)
+ * @method static Builder whereNotBetween($column, array $values, $boolean = 'and')
+ * @method static Builder whereNotBetweenColumns($column, array $values, $boolean = 'and')
+ * @method static Builder orWhereNotBetween($column, array $values)
+ * @method static Builder orWhereNotBetweenColumns($column, array $values)
+ * @method static Builder orWhereNotNull($column)
+ * @method static Builder whereDate($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereDate($column, $operator, $value = null)
+ * @method static Builder whereTime($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereTime($column, $operator, $value = null)
+ * @method static Builder whereDay($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereDay($column, $operator, $value = null)
+ * @method static Builder whereMonth($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereMonth($column, $operator, $value = null)
+ * @method static Builder whereYear($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereYear($column, $operator, $value = null)
+ * @method static Builder whereNested(Closure $callback, $boolean = 'and')
+ * @method static Builder forNestedWhere()
+ * @method static Builder addNestedWhereQuery($query, $boolean = 'and')
+ * @method static Builder whereExists(Closure $callback, $boolean = 'and', $not = false)
+ * @method static Builder orWhereExists(Closure $callback, $not = false)
+ * @method static Builder whereNotExists(Closure $callback, $boolean = 'and')
+ * @method static Builder orWhereNotExists(Closure $callback)
+ * @method static Builder addWhereExistsQuery(self $query, $boolean = 'and', $not = false)
+ * @method static Builder whereRowValues($columns, $operator, $values, $boolean = 'and')
+ * @method static Builder orWhereRowValues($columns, $operator, $values)
+ * @method static Builder whereJsonContains($column, $value, $boolean = 'and', $not = false)
+ * @method static Builder orWhereJsonContains($column, $value)
+ * @method static Builder whereJsonDoesntContain($column, $value, $boolean = 'and')
+ * @method static Builder orWhereJsonDoesntContain($column, $value)
+ * @method static Builder whereJsonLength($column, $operator, $value = null, $boolean = 'and')
+ * @method static Builder orWhereJsonLength($column, $operator, $value = null)
+ * @method static Builder dynamicWhere($method, $parameters)
+ * @method static Builder groupBy(...$groups)
+ * @method static Builder groupByRaw($sql, array $bindings = [])
+ * @method static Builder having($column, $operator = null, $value = null, $boolean = 'and')
+ * @method static Builder orHaving($column, $operator = null, $value = null)
+ * @method static Builder havingBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder havingRaw($sql, array $bindings = [], $boolean = 'and')
+ * @method static Builder orHavingRaw($sql, array $bindings = [])
+ * @method static Builder orderBy($column, $direction = 'asc')
+ * @method static Builder orderByDesc($column)
+ * @method static Builder latest($column = 'created_at')
+ * @method static Builder oldest($column = 'created_at')
+ * @method static Builder inRandomOrder($seed = '')
+ * @method static Builder orderByRaw($sql, $bindings = [])
+ * @method static Builder skip($value)
+ * @method static Builder offset($value)
+ * @method static Builder take($value)
+ * @method static Builder limit($value)
+ * @method static Builder forPage($page, $perPage = 15)
+ * @method static Builder forPageBeforeId($perPage = 15, $lastId = 0, $column = 'id')
+ * @method static Builder forPageAfterId($perPage = 15, $lastId = 0, $column = 'id')
+ * @method static Builder reorder($column = null, $direction = 'asc')
+ * @method static Builder union($query, $all = false)
+ * @method static Builder unionAll($query)
+ * @method static Builder lock($value = true)
+ * @method static Builder lockForUpdate()
+ * @method static Builder sharedLock()
+ * @method static Builder toSql()
+ * @method static Builder find($id, $columns = ['*'])
+ * @method static Builder value($column)
+ * @method static Builder get($columns = ['*'])
+ * @method static Builder paginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
+ * @method static Builder simplePaginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null)
+ * @method static Builder getCountForPagination($columns = ['*'])
+ * @method static Builder cursor()
+ * @method static Builder pluck($column, $key = null)
+ * @method static Builder implode($column, $glue = '')
+ * @method static Builder exists()
+ * @method static Builder doesntExist()
+ * @method static Builder existsOr(Closure $callback)
+ * @method static Builder doesntExistOr(Closure $callback)
+ * @method static Builder count($columns = '*')
+ * @method static Builder min($column)
+ * @method static Builder max($column)
+ * @method static Builder sum($column)
+ * @method static Builder avg($column)
+ * @method static Builder average($column)
+ * @method static Builder aggregate($function, $columns = ['*'])
+ * @method static Builder numericAggregate($function, $columns = ['*'])
+ * @method static Builder insert(array $values)
+ * @method static Builder insertOrIgnore(array $values)
+ * @method static Builder insertGetId(array $values, $sequence = null)
+ * @method static Builder insertUsing(array $columns, $query)
+ * @method static Builder update(array $values)
+ * @method static Builder updateOrInsert(array $attributes, array $values = [])
+ * @method static Builder increment($column, $amount = 1, array $extra = [])
+ * @method static Builder decrement($column, $amount = 1, array $extra = [])
+ * @method static Builder delete($id = null)
+ * @method static Builder truncate()
+ * @method static Builder newQuery()
+ * @method static Builder raw($value)
+ * @method static Builder getBindings()
+ * @method static Builder getRawBindings()
+ * @method static Builder setBindings(array $bindings, $type = 'where')
+ * @method static Builder addBinding($value, $type = 'where')
+ * @method static Builder mergeBindings(self $query)
+ * @method static Builder cleanBindings(array $bindings)
+ * @method static Builder getConnection()
+ * @method static Builder getProcessor()
+ * @method static Builder getGrammar()
+ * @method static Builder useWritePdo()
+ * @method static Builder cloneWithout(array $properties)
+ * @method static Builder cloneWithoutBindings(array $except)
+ * @method static Builder dump()
+ * @method static Builder dd()
+ */
+class Room extends Model
+{
+    use HasFactory;
+
+    protected $table = 'rooms';
+
+    protected $fillable = [
+        'name',
+        'genre',
+        'rate',
+        'smoking',
+        'air_conditioned',
+        'active',
+        'equipment',
+        'description'
+    ];
+
+    public function bookings()
+    {
+        return $this->hasMany('App\Models\Booking');
+    }
+
+    public function specialBookings()
+    {
+        return $this->hasMany('App\Models\SpecialBooking');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\Models\RoomImage');
+    }
+
+}

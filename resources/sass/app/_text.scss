@@ -1,0 +1,57 @@
+h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+
+    @include tablet() {
+        font-size: 1.3125rem;
+        margin-bottom: 30px;
+    }
+}
+
+h2 {
+    color: currentColor;
+
+    font-size: 1.75rem;
+    margin-top: 90px;
+    margin-bottom: 60px;
+
+    @include tablet() {
+        font-size: 1.1875rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+    font-weight: 500;
+
+    @include tablet() {
+        font-size: 1rem;
+    }
+}
+
+h5 {
+    color: var(--color-primary);
+    font-weight: normal;
+    margin-bottom: 10px;
+
+    &.inverted {
+        color: currentColor;
+    }
+}
+
+strong {
+    font-weight: normal;
+    color: var(--color-primary);
+}
+
+h1, h2, h3, h4 {
+    &.inverted {
+        color: var(--color-primary);
+    }
+}

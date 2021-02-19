@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+.room-finder {
+    margin-bottom: 200px;
+
+    @include phone {
+        margin-bottom: 30px;
+    }
+}
+
+.simple-toggle {
+    font-size: 1.1875rem;
+}
+
+.simple-toggle, .popup-button {
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.single-date {
+    .selected-date-to {
+        display: none;
+    }
+}
+
+@include phone {
+    button {
+        width: 100%;
+    }
+
+    .simple-toggle, .popup-button {
+        margin-bottom: 20px;
+    }
+
+    .multi-date {
+        .popup-button {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .weekday {
+            position: absolute;
+            margin-top: 14px;
+            font-size: 0.625rem;
+        }
+    }
+}

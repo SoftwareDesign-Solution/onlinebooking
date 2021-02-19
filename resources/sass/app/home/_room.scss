@@ -1,0 +1,150 @@
+#room {
+    @include phone {
+        background: var(--color-background-light);
+        color: var(--color-background-dark);
+    }
+
+    .image-slider-section {
+        margin-top: -30px;
+        height: 360px;
+        margin-bottom: 60px;
+
+        @include phone {
+            margin-bottom: 16px;
+        }
+
+        .container, .row {
+            height: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @for $i from 1 through 12 {
+            .col-#{$i}, .col-md-#{$i}, .col-sm-#{$i}, .col-lg-#{$i} {
+                height: 100%;
+
+                @include phone {
+                    &:empty {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .simple-toggle {
+        margin-bottom: 45px;
+
+        @include phone {
+            margin-bottom: 35px;
+        }
+    }
+
+    h5 {
+        font-size: 0.9375rem;
+    }
+
+    p, .content {
+        font-size: 0.9375rem;
+        margin-bottom: 40px;
+
+        @include phone {
+            margin-bottom: 16px;
+        }
+    }
+
+    .button, button {
+        margin-bottom: 350px;
+
+        @include phone {
+            width: 100%;
+            margin-bottom: 35px;
+        }
+    }
+
+    .time-selector button, .time-selector .button {
+        margin-bottom: 0;
+        width: 1.2rem;
+    }
+
+    .time-selector-desktop {
+        @include phone {
+            display: none;
+        }
+    }
+
+    .mobile-time-selector {
+        display: none;
+
+        @include phone {
+            display: block;
+        }
+    }
+
+    .icons {
+        text-align: right;
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &.desktop {
+            display: block;
+        }
+
+        &.mobile {
+            position: absolute;
+            right: 15px;
+            display: none;
+        }
+
+        .warning {
+            color: var(--color-primary);
+        }
+
+        @include phone {
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: block;
+            }
+        }
+    }
+
+    .textarea-container {
+        margin-bottom: 30px;
+    }
+}
+
+body .toast-container .toast-content.confirm-toast {
+    display: flex;
+    flex-flow: column;
+    padding: 50px 30px 30px;
+    text-align: center;
+
+    .cancel {
+        background: var(--color-background-dark);
+    }
+
+    p {
+        flex-grow: 1;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    @include phone {
+        button {
+            white-space: nowrap;
+            width: 100%;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+footer {
+    padding-top: 35px;
+    padding-bottom: 80px;
+    border-top: 1px solid var(--color-medium-dark-gray);
+    line-height: 2;
+    font-size: 1.0625rem;
+
+    @include phone {
+        padding-bottom: 50px;
+        font-size: 0.75rem;
+        line-height: 4;
+    }
+
+    .links, .social {
+        width: 100%;
+        text-align: right;
+
+        a {
+            margin-left: 45px;
+        }
+
+        @include phone {
+            text-align: left;
+
+            a {
+                margin-left: 0;
+                margin-right: 40px;
+            }
+        }
+    }
+
+    @include phone {
+        .links a {
+            display: block;
+        }
+    }
+
+    .social {
+        margin-bottom: 60px;
+
+        @include phone {
+            margin-bottom: 40px;
+        }
+    }
+
+    @include phone {
+        .contact {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    color: var(--color-background-dark);
+    background: var(--color-medium-light-gray);
+    min-height: 60px;
+    width: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            flex-flow: column;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .copyright-text {
+        margin-right: 32px;
+    }
+
+    .funding-logo {
+        margin-left: 16px;
+        height: 32px;
+    }
+}

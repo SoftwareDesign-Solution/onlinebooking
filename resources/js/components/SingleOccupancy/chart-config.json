@@ -1,0 +1,45 @@
+{
+    "type": "bar",
+    "data": {
+        "labels": [],
+        "datasets": [{
+            "data": [],
+            "borderColor": "this.calculateBorderColor",
+            "borderWidth": 2,
+            "backgroundColor": "transparent",
+            "borderSkipped": false
+        }]
+    },
+    "options": {
+        "responsive": false,
+        "legend": {
+            "display": false
+        },
+        "scales": {
+            "yAxes": [{
+                "display": true,
+                "scaleLabel": {
+                    "display": false,
+                    "labelString": "Auslastung in %"
+                },
+                "gridLines": {
+                    "display": false
+                },
+                "ticks": {
+                    "display": false,
+                    "suggestedMin": 0,
+                    "suggestedMax": 100
+                }
+            }],
+            "xAxes": [{
+                "gridLines": {
+                    "display": false
+                },
+                "ticks": {
+                    "fontColor": "#FCFCFC",
+                    "fontSize": 12
+                }
+            }]
+        }
+    }
+}

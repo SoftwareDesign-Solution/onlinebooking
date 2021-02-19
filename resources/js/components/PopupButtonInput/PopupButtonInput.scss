@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+.popup-button {
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 10px 30px;
+    font-size: 1.1875rem;
+
+    @include phone {
+        font-size: 0.875rem;
+        padding: 10px 20px;
+    }
+}
+
+.label {
+    color: var(--color-primary);
+}

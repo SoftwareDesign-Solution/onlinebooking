@@ -1,0 +1,17 @@
+@mixin font-family($src, $name, $weight: 400, $style: normal) {
+    @font-face {
+        font-family: $name;
+        src: url($src + '.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@include font-family("/assets/fonts/urw-din-medium",     "URW DIN", 400, normal);
+@include font-family("/assets/fonts/urw-din-black",      "URW DIN", 500, normal);
+@include font-family("/assets/fonts/urw-din-medium-it",  "URW DIN", 400, italic);
+@include font-family("/assets/fonts/urw-din-black-it",   "URW DIN", 500, italic);
+
+:root {
+    --font-family-urw-din: "URW DIN", sans-serif;
+}

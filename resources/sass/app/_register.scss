@@ -1,0 +1,53 @@
+#register {
+    label {
+        margin-top: 25px;
+        display: block;
+    }
+
+    input[type=search],
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=number],
+    input[type=tel],
+    input[type=date] {
+        width: 100%;
+    }
+
+    .check-box-container {
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 40px;
+
+        .checkbox-label {
+            margin-top: 0;
+            font-size: 0.75rem;
+        }
+
+        input[type=checkbox] {
+            flex-shrink: 0;
+        }
+    }
+
+    button {
+        margin-bottom: 188px;
+    }
+
+    form:invalid {
+        button {
+            background: var(--color-medium-dark-gray);
+            pointer-events: none;
+        }
+    }
+
+    @include phone {
+        button {
+            margin-bottom: 28px;
+        }
+    }
+
+    .validation-error {
+        font-size: 0.6825rem;
+        color: var(--color-error);
+    }
+}

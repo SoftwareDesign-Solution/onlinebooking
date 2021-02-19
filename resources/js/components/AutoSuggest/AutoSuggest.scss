@@ -1,0 +1,21 @@
+.suggestions {
+    position: absolute;
+
+    background: var(--color-background-light);
+    z-index: 1;
+
+    box-shadow: 0 4px 4px rgba(var(--rgb-background-dark), 0.25);
+    margin-left: 4px;
+
+    &.hidden {
+        display: none;
+    }
+
+    .suggestion {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        cursor: pointer;
+    }
+}

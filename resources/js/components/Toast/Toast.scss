@@ -1,0 +1,116 @@
+@import "~bootstrap/scss/functions";
+@import "resources/sass/mixins/responsive";
+
+.toast-content {
+    overflow-y: auto;
+    display: none;
+    position: relative;
+    width: 550px;
+    background: var(--color-background-light);
+    color: var(--color-background-dark);
+    border-radius: 12px;
+
+    &.open {
+        display: block;
+    }
+}
+
+.close-toast-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.toast-container {
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    pointer-events: none;
+    transition: 300ms ease;
+    opacity: 0;
+    background: rgba(var(--rgb-background-dark), 0.58);
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    @include phone {
+        background: rgba(var(--rgb-background-dark), 0.0);
+        opacity: 1;
+
+        &.open {
+            background: rgba(var(--rgb-background-dark), 0.58);
+        }
+    }
+}
+
+.toast-content.notification-toast-content {
+
+    display: flex;
+    flex-flow: column;
+    padding: 50px 35px 30px;
+
+    @include phone {
+        padding: 30px 35px;
+    }
+
+    .content {
+        flex-grow: 1;
+    }
+
+    button {
+        display: none;
+        background: var(--color-background-dark);
+        width: 100%;
+
+        @include phone {
+            display: block;
+        }
+    }
+}
+
+@include phone {
+    .close-toast-button {
+        display: none;
+    }
+
+    .toast-container {
+        z-index: initial;
+    }
+
+    .toast-content {
+        display: block;
+        position: fixed;
+        height: auto;
+        min-height: 240px;
+        border-radius: 12px 12px 0 0;
+        bottom: 0;
+        width: 100%;
+        background: var(--color-background-light);
+        color: var(--color-background-dark);
+        transition: 400ms ease-out;
+        transform: translateY(100%);
+
+        &.open {
+            transform: translateY(0);
+        }
+    }
+
+}

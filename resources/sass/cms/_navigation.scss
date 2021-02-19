@@ -1,0 +1,40 @@
+nav {
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    background: var(--color-background-light);
+    color: var(--color-background-dark);
+    border-radius: 0 24px 24px 0;
+    width: 100px;
+    height: 100%;
+    padding: 50px 0;
+    align-items: center;
+
+    .logo {
+        flex-grow: 0;
+        margin-bottom: 60px;
+    }
+
+    ul {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        //noinspection CssInvalidPropertyValue
+        svg {
+            fill: inherit;
+            stroke: inherit;
+        }
+
+        &.active {
+            fill: var(--color-primary);
+        }
+
+        margin: 20px 0;
+    }
+}
