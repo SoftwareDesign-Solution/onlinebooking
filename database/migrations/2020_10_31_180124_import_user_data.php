@@ -13,37 +13,6 @@ class ImportUserData extends Migration
     public function up()
     {
 
-        $user = new User();
-
-        $user->name = "Manuel Kübler";
-        $user->email = "mail@softwaredesign-solution.de";
-        $user->email_verified_at = Carbon::now();
-        $user->password = Hash::make("M!len@17"); // users have to reset their password
-        $user->created_at = Carbon::now();
-        $user->updated_at = Carbon::now();
-        $user->role = 'admin';
-        $user->phone = '017632125780';
-        $user->active = true;
-
-        $user->save();
-
-
-        $user = new User();
-
-        $user->name = "Manuel Kübler";
-        $user->email = "manuel.kuebler@gmail.com";
-        $user->email_verified_at = Carbon::now();
-        $user->password = Hash::make("M!len@17"); // users have to reset their password
-        $user->created_at = Carbon::now();
-        $user->updated_at = Carbon::now();
-        $user->role = 'user';
-        $user->phone = '017632125780';
-        $user->active = true;
-
-        $user->save();
-
-        return;
-
         if (env('APP_ENV') == 'pipeline') {
             return;
         }

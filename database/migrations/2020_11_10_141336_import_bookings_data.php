@@ -11,8 +11,6 @@ class ImportBookingsData extends Migration
     public function up()
     {
 
-        return;
-
         if (env('APP_ENV') == 'pipeline') {
             return;
         }

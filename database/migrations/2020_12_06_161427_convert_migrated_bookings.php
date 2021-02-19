@@ -12,8 +12,6 @@ class ConvertMigratedBookings extends Migration
     public function up()
     {
 
-        return;
-
         $specialBookings = SpecialBooking::all();
 
         foreach ($specialBookings as $specialBooking) {
