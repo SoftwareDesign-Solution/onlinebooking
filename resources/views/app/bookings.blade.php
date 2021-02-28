@@ -30,12 +30,12 @@
                     <div class="results">
                         @foreach($availableSlots as $date => $slotsPerRoom)
                             @if(sizeof($slotsPerRoom) == 0)
-                                <div class="result-date no-results">{{ \Carbon\Carbon::make($date)->translatedFormat('D d M') }}</div>
+                                <div class="result-date no-results">{{ \Carbon\Carbon::createFromFormat(config('roombooking.date_format'), $date)->translatedFormat('D d M') }}</div>
                                 <div class="result no-result">
                                     kein Termin gefunden
                                 </div>
                             @else
-                                <div class="result-date">{{ \Carbon\Carbon::make($date)->translatedFormat('D d M') }}</div>
+                                <div class="result-date">{{ \Carbon\Carbon::createFromFormat(config('roombooking.date_format'), $date)->translatedFormat('D d M') }}</div>
                                 @foreach($slotsPerRoom as $slot => $roomsForSlot)
                                     @if(sizeof($roomsForSlot) == 0)
                                         @continue

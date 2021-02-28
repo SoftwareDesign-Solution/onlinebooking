@@ -18,7 +18,7 @@
 
                     <div class="bookings">
                         @foreach($bookings as $date => $bookingsForDate)
-                            <div class="date">{{ \Carbon\Carbon::make($date)->translatedFormat('D d M') }}</div>
+                            <div class="date">{{ \Carbon\Carbon::createFromFormat(config('roombooking.date_format'), $date)->translatedFormat('D d M') }}</div>
                             @foreach($bookingsForDate as $booking)
                                 <div class="booking">
                                     <div class="time">{{ \Carbon\Carbon::make($booking->from)->format('H : 00') }} – {{ \Carbon\Carbon::make($booking->to)->format('H : 00') }}</div>
