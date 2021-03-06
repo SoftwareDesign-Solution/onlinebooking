@@ -12,6 +12,7 @@
             :no-shortcuts="true"
             :no-button="true"
             :min-date="$moment.utc().format('YYYY-MM-DD')"
+            format="YYYY-MM-DD"
             :locale="'de_DE'"
             :no-header="true"
             :inline="true"

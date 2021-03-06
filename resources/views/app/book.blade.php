@@ -29,7 +29,7 @@
                     <div class="content">
                         Buchung bis 72 Stunden vor Termin stornierbar!<br>
                         <strong class="name">{{ $room->name }}</strong> {{ $room->rate }}€/h<br>
-                        {{ (new \Carbon\Carbon(request()->query('dateFrom')))->isoFormat('ddd D MMM') }}<br>
+                        {{ \Carbon\Carbon::createFromFormat(config('roombooking.date_format'), request()->query('dateFrom'))->isoFormat('ddd D MMM')  }}<br>
                         <book-room-form
                             v-on:change="$refs.hourFrom.value = $event.from; $refs.hourTo.value = $event.to"
                             :min-hour="{{ $minHour }}"

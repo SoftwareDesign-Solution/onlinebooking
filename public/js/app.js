@@ -126187,6 +126187,7 @@ var render = function() {
           "no-shortcuts": true,
           "no-button": true,
           locale: "de_DE",
+          format: "YYYY-MM-DD",
           "no-header": true,
           inline: true,
           "only-date": true
@@ -126219,9 +126220,7 @@ var render = function() {
                     _vm._v(
                       "\n                    " +
                         _vm._s(
-                          _vm.$moment
-                            .utc(_vm.dateInput.start)
-                            .format("dd D MMM")
+                          _vm.$moment.utc(_vm.dateInput).format("dd D MMM")
                         ) +
                         "\n                "
                     )
@@ -126698,6 +126697,7 @@ var render = function() {
           "no-shortcuts": true,
           "no-button": true,
           "min-date": _vm.$moment.utc().format("YYYY-MM-DD"),
+          format: "YYYY-MM-DD",
           locale: "de_DE",
           "no-header": true,
           inline: true,
@@ -128616,13 +128616,21 @@ var render = function() {
                 ? [
                     _c("input", {
                       attrs: { type: "hidden", name: "dateFrom" },
-                      domProps: { value: _vm.selectedDate.from.toISOString() }
+                      domProps: {
+                        value: _vm.selectedDate.from.format(
+                          this.$config.date_format
+                        )
+                      }
                     }),
                     _vm._v(" "),
                     _vm.selectedDate.to && _vm.type === "multiple"
                       ? _c("input", {
                           attrs: { type: "hidden", name: "dateTo" },
-                          domProps: { value: _vm.selectedDate.to.toISOString() }
+                          domProps: {
+                            value: _vm.selectedDate.to.format(
+                              this.$config.date_format
+                            )
+                          }
                         })
                       : _vm._e()
                   ]
@@ -142225,7 +142233,14 @@ Object.defineProperty(Vue.prototype, '$closePopup', {
 window.OnlineBooking = {
   generalInformation: JSON.parse(document.querySelector('#static-general-information').textContent),
   rooms: JSON.parse(document.querySelector('#static-rooms').textContent)
-};
+}; // Config
+
+Object.defineProperty(Vue.prototype, '$config', {
+  value: {
+    date_format: 'DD-MM-YY',
+    date_displayformat: ''
+  }
+});
 new Vue({
   el: '#app',
   data: {

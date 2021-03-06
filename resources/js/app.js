@@ -37,6 +37,14 @@ window.OnlineBooking = {
     rooms: JSON.parse(document.querySelector('#static-rooms').textContent)
 }
 
+// Config
+Object.defineProperty(Vue.prototype, '$config', {
+    value: {
+        date_format: 'DD-MM-YY',
+        date_displayformat: ''
+    }
+});
+
 new Vue({
     el: '#app',
     data: {

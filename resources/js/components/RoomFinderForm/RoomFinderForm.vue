@@ -53,8 +53,9 @@
                 <form method="POST" action="/bookings">
                     <slot></slot>
                     <template v-if="selectedDate">
-                        <input type="hidden" name="dateFrom" v-bind:value="selectedDate.from.toISOString()">
-                        <input v-if="selectedDate.to && type === 'multiple'" type="hidden" name="dateTo" v-bind:value="selectedDate.to.toISOString()">
+                        <!-- .toISOString() YYYY-MM-DD-->
+                        <input type="hidden" name="dateFrom" v-bind:value="selectedDate.from.format(this.$config.date_format)">
+                        <input v-if="selectedDate.to && type === 'multiple'" type="hidden" name="dateTo" v-bind:value="selectedDate.to.format(this.$config.date_format)">
                     </template>
                     <template v-if="selectedTime">
                         <input type="hidden" name="hourFrom" v-bind:value="selectedTime.from">

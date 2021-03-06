@@ -12,6 +12,7 @@
             :no-shortcuts="true"
             :no-button="true"
             :locale="'de_DE'"
+            format="YYYY-MM-DD"
             :no-header="true"
             :inline="true"
             :only-date="true">
@@ -22,7 +23,7 @@
             <div class="selected-date">
                 <div class="date">
                     <template v-if="dateInput">
-                        {{ $moment.utc(dateInput.start).format('dd D MMM') }}
+                        {{ $moment.utc(dateInput).format('dd D MMM') }}
                     </template>
                 </div>
                 <div class="appointment-count">

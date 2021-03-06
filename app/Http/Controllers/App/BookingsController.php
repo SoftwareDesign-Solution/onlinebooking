@@ -43,9 +43,26 @@ class BookingsController extends Controller
     {
         set_time_limit(0);
 
+        //echo Carbon::now()->format(config('roombooking.date_format'));
+        //return;
+
+        /*
+        print_r([
+            'dateFrom' => $request->get("dateFrom"),
+            'dateTo' => $request->get("dateTo"),
+            'hourFrom' => $request->get("hourFrom"),
+            'hourTo' => $request->get("hourTo"),
+            'requestedRooms' => null,
+            'availableSlots' => null
+        ]);
+        return;
+        */
+
+        // Array ( [dateFrom] => 2021-02-27T22:48:47.869Z [dateTo] => 2021-03-02T22:48:47.869Z )
+
         if ($request->get("dateFrom")) {
-            $dateFrom = Carbon::parse($request->get("dateFrom"))->startOfDay();
-            $dateTo = $request->has("dateTo") ? Carbon::parse($request->get("dateTo"))->endOfDay() : $dateFrom->clone();
+            $dateFrom = Carbon::createFromFormat(config('roombooking.date_format'), $request->get("dateFrom"))->startOfDay();
+            $dateTo = $request->has("dateTo") ? Carbon::createFromFormat(config('roombooking.date_format'), $request->get("dateTo"))->endOfDay() : $dateFrom->clone();
             $hourFrom = intval($request->get("hourFrom"));
             $hourTo = intval($request->get("hourTo"));
             if ($request->get("rooms") == "") {
@@ -66,6 +83,18 @@ class BookingsController extends Controller
                 throw new BadBookingQueryException();
             }
 
+            /*
+            print_r([
+                'dateFrom' => $request->session()->get("dateFrom"),
+                'dateTo' => $request->session()->get("dateTo"),
+                'hourFrom' => $request->session()->get("hourFrom"),
+                'hourTo' => $request->session()->get("hourTo"),
+                'requestedRooms' => null,
+                'availableSlots' => null
+            ]);
+            return;
+            */
+
             $dateFrom = Carbon::parse($request->session()->get("dateFrom"))->startOfDay();
             $dateTo = $request->session()->has("dateTo") ? Carbon::parse($request->session()->get("dateTo"))->endOfDay() : $dateFrom->clone();
             $hourFrom = intval($request->session()->get("hourFrom"));
@@ -80,6 +109,18 @@ class BookingsController extends Controller
         $rooms = array_map(function ($id) {
             return $this->roomsRepository->room($id);
         }, $rooms);
+
+        /*
+        print_r([
+            'dateFrom' => $dateFrom,
+            'dateTo' => $dateTo,
+            'hourFrom' => $hourFrom,
+            'hourTo' => $hourTo,
+            'requestedRooms' => $rooms,
+            'availableSlots' => $availableSlots
+        ]);
+        return;
+        */
 
         return view('app.bookings')
             ->with("dateFrom", $dateFrom)
