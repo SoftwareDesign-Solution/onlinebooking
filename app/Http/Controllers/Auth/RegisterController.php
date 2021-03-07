@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Models\Notification;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -29,6 +32,23 @@ class RegisterController extends Controller
             // at least 9 characters, one digit and one non-alphanumeric character except whitespace
             'password' => ['required', 'string', 'min:9', 'regex:/\d/', 'regex:/[^a-zA-Z\d\s:]/', 'confirmed'],
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        //$this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 201)
+            : redirect($this->redirectPath());
     }
 
     protected function create(array $data)
