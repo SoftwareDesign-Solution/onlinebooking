@@ -116,6 +116,7 @@ export default class BookingsTable extends BookingsTableProps {
     }
 
     calculateHourSlots(): number[] {
+        /*
         if (moment.utc(this.date).isoWeekday() >= 6) {
             return new Array(this.generalInfo.opening_hours_end_weekend - this.generalInfo.opening_hours_start_weekend)
                 .fill(1)
@@ -125,6 +126,14 @@ export default class BookingsTable extends BookingsTableProps {
                 .fill(1)
                 .map((_, i) => i + this.generalInfo.opening_hours_start_weekdays);
         }
+        */
+
+        /*
+        return new Array(13)
+            .fill({0: 11, 1: 12, 2: 13, 3: 14, 4: 15, 5: 16, 6: 17, 7: 18, 8: 19, 9: 20, 10: 21, 11: 22, 12: 23, 13: 00});
+        */
+
+        return [10, 11,12,13,14,15,16,17,18,19,20,21,22,23,24];
     }
 
     isBooked(room: Room, slot: number): boolean {
