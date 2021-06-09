@@ -9,7 +9,7 @@
                     <h1>Jetzt Proberaum am Naschmarkt buchen</h1>
                     <p class="subheader">Top-Ausstattung und bis 72h vor dem Termin stornierbar!</p>
 
-                    @if (Auth::user()->active == 0)
+                    @if ((Auth::user() != null) && (Auth::user()->active == 0))
                     <p class="subheader">Dein Account wird innerhalb von 24h nach deiner Registrierung manuell von uns aktiviert. Du bekommst eine E-Mail sobald du einen Slot buchen kannst. Wir bitten dich um Gelduld. Vielen Dank.</p>
                     @endif
 
