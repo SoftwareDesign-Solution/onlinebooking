@@ -47,6 +47,8 @@ class VerificationController extends Controller
             event(new Verified($request->user()));
         }
 
+        //$this->deleteNotificationsByUserId($user->id);
+
         if ($response = $this->verified($request)) {
             return $response;
         }
@@ -62,5 +64,15 @@ class VerificationController extends Controller
         $notifications->where('type', Notification::TYPE_VERIFY_EMAIL)->each(function ($notification) {
             $this->notificationsRepository->deleteNotification($notification->id);
         });
+    }
+
+    private function deleteNotificationsByUserId($userId)
+    {
+
+        $notifications = $this->notificationsRepository->notificationsForUser($userId);
+        $notifications->where('type', Notification::TYPE_VERIFY_EMAIL)->each(function ($notification) {
+            $this->notificationsRepository->deleteNotification($notification->id);
+        });
+
     }
 }
