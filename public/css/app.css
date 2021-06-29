@@ -5012,6 +5012,12 @@ label.success {
 .datetimepicker .datepicker-container .datepicker-days .datepicker-day .datepicker-today {
   background: transparent !important;
 }
+/* größere Pfeile für die Monate im Datepicker */
+.datepicker-container .datepicker-controls .datepicker-button svg[data-v-7043ad7f] {
+    height: 24px;
+    width: 24px;
+    fill: #ed7b23;
+}
 
 ::-webkit-scrollbar {
   background: var(--color-medium-dark-gray);
@@ -5987,7 +5993,7 @@ footer .social {
 
 #room p,
 #room .content {
-  font-size: 0.9375rem;
+  font-size: 24px;
   margin-bottom: 40px;
 }
 
