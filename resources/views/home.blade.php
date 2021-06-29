@@ -16,6 +16,10 @@
                     <room-finder-form>
                         @csrf
                     </room-finder-form>
+
+                    <p style="margin-top:10px;">Hast du Probleme dich einzuloggen? Durch das neue System musst du dein Passwort neu setzen. Hier kannst du eine E-Mail mit einem Link zum zurücksetzen anfordern:</p>
+                    <a href="https://onlinebooking.t-on.at/password/reset">Hier klicken um deine Reset-E-Mail anzufordern</a>
+                    
                 </div>
                 <div class="col-lg-2"></div>
             </div>
