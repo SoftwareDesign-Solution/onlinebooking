@@ -23,7 +23,7 @@
 
                         @error('password')
                         <div class="validation-error">
-                            Passwort muss min. 9 Zeichen lang sein , ein Sonderzeichen und eine Zahl enthalten
+                            Passwort muss min. 9 Zeichen lang sein , ein Sonderzeichen (zum Beispiel !,?,$,%, etc.) und eine Zahl enthalten
                         </div>
                         @enderror
 

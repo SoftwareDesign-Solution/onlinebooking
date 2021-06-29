@@ -2,7 +2,9 @@ Dein Account ist ab sofort für unsere Online-Buchung freigeschaltet.
 
 Wir freuen uns auf dich!
 
-Wenn du Fragen hast stehen wir dir gerne telefonisch unter +43 15 87 54 64 zur Seite.
+Hier kommst du direkt zum Onlinebooking: <a href="https://onlinebooking.t-on.at">onlinebooking.t-on.at</a>
+
+Wenn du Fragen hast stehen wir dir gerne telefonisch unter <a href="tel:+4315875464">+43 1 587 54 64</a> zur Seite.
 
 Liebe Grüße,
 dein t-on team
