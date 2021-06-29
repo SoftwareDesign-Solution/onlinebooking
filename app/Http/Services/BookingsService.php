@@ -132,7 +132,7 @@ class BookingsService
                     $slotFrom = Carbon::make($booking->from)->hour;
                     $slotTo = Carbon::make($booking->to)->hour;
 
-                    for ($slot = $slotFrom; $slot <= $slotTo; $slot++) {
+                    for ($slot = $slotFrom; $slot < $slotTo; $slot++) {
                         array_push($slotsTaken, $slot);
                     }
                 }
@@ -145,7 +145,7 @@ class BookingsService
                     $slotFrom = Carbon::make($booking->from)->hour;
                     $slotTo = Carbon::make($booking->to)->hour;
 
-                    for ($slot = $slotFrom; $slot <= $slotTo; $slot++) {
+                    for ($slot = $slotFrom; $slot < $slotTo; $slot++) {
                         array_push($slotsTaken, $slot);
                     }
                 }
