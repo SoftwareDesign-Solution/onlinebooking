@@ -52,6 +52,11 @@ class RoomController extends Controller
         //$dateTo = Carbon::parse($request->get('dateTo'));
         $dateFrom = Carbon::createFromFormat(config('roombooking.date_format'), $request->get('dateFrom'));
         $dateTo = Carbon::createFromFormat(config('roombooking.date_format'), $request->get('dateTo'));
+        /* set minutes and seconds to 0 because creating from format without setting minutes leads to the current minutes being in the dateFrom and dateTo variables */
+        $dateFrom->minute=0;
+        $dateFrom->second=0;
+        $dateTo->minute=0;
+        $dateTo->second=0;
         $hourFrom = intval($request->get('hourFrom'));
         $hourTo = intval($request->get('hourTo'));
         $notes = $request->get('notes');
