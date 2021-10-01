@@ -5016,7 +5016,7 @@ label.success {
 .datepicker-container .datepicker-controls .datepicker-button svg[data-v-7043ad7f] {
     height: 24px;
     width: 24px;
-    fill: #ed7b23;
+    fill: #ed7b23 !important;
 }
 
 ::-webkit-scrollbar {
