@@ -55,7 +55,6 @@ class BookingsService
                 return true;
             }
         }
-
         return false;
     }
 

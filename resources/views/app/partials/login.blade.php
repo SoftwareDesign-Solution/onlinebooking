@@ -2,6 +2,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h3>Bevor du buchst, musst du dich noch anmelden!</h3>
+                @if($errors->has('auth.failed'))
+                    <p class="subheader">Deine E-Mail-Adresse oder dein Passwort ist falsch. Bitte setze dein Passwort zurück, falls du dein Passwort vergessen hast.</p>
+                @endif
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="E-Mail Addresse">

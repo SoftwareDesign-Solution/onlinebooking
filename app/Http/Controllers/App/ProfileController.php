@@ -31,7 +31,7 @@ class ProfileController extends Controller
         $bookingsByDate = [];
 
         foreach (Auth::user()->bookings as $booking) {
-            if (Carbon::make($booking->from)->isBefore(Carbon::now())) {
+            if (Carbon::make($booking->from)->isBefore(Carbon::now()->startOfDay())) {
                 continue;
             }
 
